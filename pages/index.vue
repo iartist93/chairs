@@ -20,9 +20,13 @@
         <div class="options">
           <div class="colors">
             <span>Color : </span>
-            <button v-for="item in 10" :key="item" class="color_button">
-              {{ item }}
-            </button>
+            <button
+              v-for="item in 10"
+              :key="item"
+              class="color_button"
+              @click="changeSelectedColorIndex(item)"
+              :style="{ 'background-color': colorMap[item] }"
+            ></button>
           </div>
           <div class="sizes">
             <span>Size : </span>
@@ -43,13 +47,39 @@
       </div>
     </div>
     <div class="middle">
-      <img src="~/assets/chair1.png" alt="" srcset="" />
+      <img
+        :src="require(`@/assets/${selectedColorIndex}.jpg`)"
+        alt="selected chair"
+      />
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      selectedColorIndex: 1,
+      colorMap: {
+        0: "#2C2B30",
+        1: "#F3F3FB",
+        2: "#DFE0F2",
+        3: "#E8E7ED",
+        4: "#202022",
+        5: "#EEEAE7",
+        6: "#F62231",
+        7: "#EFB93F",
+        8: "#EC6142",
+        9: "#77C0CF"
+      }
+    };
+  },
+  methods: {
+    changeSelectedColorIndex(index) {
+      this.selectedColorIndex = parseInt(index);
+    }
+  }
+};
 </script>
 
 <style lang="scss">
