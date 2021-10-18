@@ -25,7 +25,7 @@
               :key="item"
               class="color_button"
               @click="changeSelectedColorIndex(item)"
-              :style="{ 'background-color': colorMap[item] }"
+              :style="{ 'background-color': colorMap[item - 1] }"
             ></button>
           </div>
           <div class="sizes">
