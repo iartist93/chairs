@@ -19,8 +19,14 @@
       <div class="content">
         <div class="options">
           <div class="colors">
-            <span>Colors : </span>
+            <span>Color : </span>
             <button v-for="item in 10" :key="item" class="color_button">
+              {{ item }}
+            </button>
+          </div>
+          <div class="sizes">
+            <span>Size : </span>
+            <button v-for="item in 10" :key="item" class="size_button">
               {{ item }}
             </button>
           </div>
@@ -125,5 +131,19 @@ span {
   background-color: green;
   margin-right: 10px;
   cursor: pointer;
+}
+
+.size_button {
+  border: 0;
+  outline: none;
+  margin-right: 10px;
+
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+
+  &::after {
+    content: "cm";
+  }
 }
 </style>
