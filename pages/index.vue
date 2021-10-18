@@ -17,7 +17,14 @@
         </div>
       </div>
       <div class="content">
-        <div class="options"></div>
+        <div class="options">
+          <div class="colors">
+            <span>Colors : </span>
+            <button v-for="item in 10" :key="item" class="color_button">
+              {{ item }}
+            </button>
+          </div>
+        </div>
         <div class="info"></div>
         <div class="actions"></div>
       </div>
@@ -28,6 +35,9 @@
         <div class="review"></div>
         <div class="actions"></div>
       </div>
+    </div>
+    <div class="middle">
+      <img src="~/assets/chair1.png" alt="" srcset="" />
     </div>
   </div>
 </template>
@@ -52,6 +62,8 @@ span {
 
 .side {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .left {
@@ -66,6 +78,13 @@ span {
   padding: 20px;
 }
 
+.middle {
+  position: absolute;
+  left: 35%;
+  top: 10%;
+}
+
+//////////////////////////////////////////////////////////////////
 .account {
   display: flex;
 
@@ -90,5 +109,21 @@ span {
     border: none;
     background-color: transparent;
   }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.color_button {
+  border: 0;
+  outline: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: green;
+  margin-right: 10px;
+  cursor: pointer;
 }
 </style>
