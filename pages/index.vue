@@ -30,8 +30,8 @@
           </div>
           <div class="sizes">
             <span>Size : </span>
-            <button v-for="item in 10" :key="item" class="size_button">
-              {{ item }}
+            <button v-for="item in 7" :key="item" class="size_button">
+              {{ 50 + item * 5 }}
             </button>
           </div>
         </div>
@@ -90,6 +90,7 @@ p,
 span {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 .container {
@@ -152,13 +153,22 @@ span {
   flex-direction: column;
 }
 
+.colors {
+  // margin-bottom: 10px;
+  font-size: 25px;
+}
+
+.sizes {
+  margin-top: 20px;
+  font-size: 25px;
+}
+
 .color_button {
   border: 0;
   outline: none;
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: green;
   margin-right: 10px;
   cursor: pointer;
 }
@@ -171,6 +181,7 @@ span {
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
+  background-color: transparent;
 
   &::after {
     content: "cm";
